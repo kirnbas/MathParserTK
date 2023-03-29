@@ -305,7 +305,7 @@ namespace MathParserTK
             if (supportedOperators.ContainsKey(token.ToString()))
             {
                 // Determine it is unary or binary operator
-                bool isUnary = pos == 0 || expression[pos - 1] == '(';
+                bool isUnary = pos == 0 || expression[pos - 1] == '(' || supportedOperators.ContainsKey(expression[pos - 1].ToString());
                 pos++;
 
                 switch (token.ToString())
